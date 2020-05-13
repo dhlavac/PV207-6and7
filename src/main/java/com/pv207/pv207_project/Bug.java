@@ -7,29 +7,89 @@ package com.pv207.pv207_project;
 @javax.persistence.Entity
 public class Bug implements java.io.Serializable {
 
-    static final long serialVersionUID = 1L;
+	static final long serialVersionUID = 1L;
 
-    @javax.persistence.GeneratedValue(strategy = javax.persistence.GenerationType.AUTO, generator = "BUG_ID_GENERATOR")
-    @javax.persistence.Id
-    @javax.persistence.SequenceGenerator(sequenceName = "BUG_ID_SEQ", name = "BUG_ID_GENERATOR")
-    private java.lang.Long id;
+	@javax.persistence.GeneratedValue(strategy = javax.persistence.GenerationType.AUTO, generator = "BUG_ID_GENERATOR")
+	@javax.persistence.Id
+	@javax.persistence.SequenceGenerator(sequenceName = "BUG_ID_SEQ", name = "BUG_ID_GENERATOR")
+	private java.lang.Long id;
 
-    public Bug() {
-    }
-    
-    public Bug(java.lang.Long id) {
-        this.id = id;
-    }
+	@org.kie.api.definition.type.Label(value = "Name")
+	private java.lang.String name;
 
-    public java.lang.Long getId() {
-        return this.id;
-    }
-    
-    public void setId(java.lang.Long id) {
-        this.id = id;
-    }
+	@org.kie.api.definition.type.Label(value = "Description")
+	private java.lang.String description;
 
+	@javax.persistence.ManyToOne(cascade = {javax.persistence.CascadeType.ALL}, fetch = javax.persistence.FetchType.EAGER)
+	@org.kie.api.definition.type.Label(value = "Issue")
+	private com.pv207.pv207_project.Issue issue;
 
+	@org.kie.api.definition.type.Label(value = "DEV_notes")
+	private java.lang.String dev_notes;
 
+	@org.kie.api.definition.type.Label(value = "Assignee")
+	private java.lang.String assignee;
+
+	public Bug() {
+	}
+
+	public java.lang.Long getId() {
+		return this.id;
+	}
+
+	public void setId(java.lang.Long id) {
+		this.id = id;
+	}
+
+	public java.lang.String getName() {
+		return this.name;
+	}
+
+	public void setName(java.lang.String name) {
+		this.name = name;
+	}
+
+	public java.lang.String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(java.lang.String description) {
+		this.description = description;
+	}
+
+	public com.pv207.pv207_project.Issue getIssue() {
+		return this.issue;
+	}
+
+	public void setIssue(com.pv207.pv207_project.Issue issue) {
+		this.issue = issue;
+	}
+
+	public java.lang.String getDev_notes() {
+		return this.dev_notes;
+	}
+
+	public void setDev_notes(java.lang.String dev_notes) {
+		this.dev_notes = dev_notes;
+	}
+
+	public java.lang.String getAssignee() {
+		return this.assignee;
+	}
+
+	public void setAssignee(java.lang.String assignee) {
+		this.assignee = assignee;
+	}
+
+	public Bug(java.lang.Long id, java.lang.String name,
+			java.lang.String description, com.pv207.pv207_project.Issue issue,
+			java.lang.String dev_notes, java.lang.String assignee) {
+		this.id = id;
+		this.name = name;
+		this.description = description;
+		this.issue = issue;
+		this.dev_notes = dev_notes;
+		this.assignee = assignee;
+	}
 
 }
