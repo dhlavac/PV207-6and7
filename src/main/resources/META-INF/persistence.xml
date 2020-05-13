@@ -3,6 +3,7 @@
     <persistence-unit name="com.pv207:PV207-project:1.0.0-SNAPSHOT" transaction-type="JTA">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
         <jta-data-source>java:jboss/datasources/ExampleDS</jta-data-source>
+        <class>com.pv207.pv207_project.Bug</class>
         <exclude-unlisted-classes>true</exclude-unlisted-classes>
         <properties>
             <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
