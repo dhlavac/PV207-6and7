@@ -6,12 +6,47 @@ package com.pv207.pv207_project;
 
 public class Issue implements java.io.Serializable {
 
-    static final long serialVersionUID = 1L;
+	static final long serialVersionUID = 1L;
 
-    public Issue() {
-    }
+	@org.kie.api.definition.type.Label(value = "Name")
+	private java.lang.String name;
+	@org.kie.api.definition.type.Label(value = "Description")
+	private java.lang.String description;
+	@org.kie.api.definition.type.Label(value = "Date")
+	private java.util.Date date;
 
+	public Issue() {
+	}
 
+	public java.lang.String getName() {
+		return this.name;
+	}
 
+	public void setName(java.lang.String name) {
+		this.name = name;
+	}
+
+	public java.lang.String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(java.lang.String description) {
+		this.description = description;
+	}
+
+	public java.util.Date getDate() {
+		return this.date;
+	}
+
+	public void setDate(java.util.Date date) {
+		this.date = date;
+	}
+
+	public Issue(java.lang.String name, java.lang.String description,
+			java.util.Date date) {
+		this.name = name;
+		this.description = description;
+		this.date = date;
+	}
 
 }
