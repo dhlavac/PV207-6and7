@@ -14,21 +14,20 @@ public class Bug implements java.io.Serializable {
 	@javax.persistence.SequenceGenerator(sequenceName = "BUG_ID_SEQ", name = "BUG_ID_GENERATOR")
 	private java.lang.Long id;
 
-	@org.kie.api.definition.type.Label(value = "Name")
+	@org.kie.api.definition.type.Label("Name")
 	private java.lang.String name;
 
-	@org.kie.api.definition.type.Label(value = "Description")
+	@org.kie.api.definition.type.Label("Description")
 	private java.lang.String description;
 
-	@javax.persistence.ManyToOne(cascade = {javax.persistence.CascadeType.ALL}, fetch = javax.persistence.FetchType.EAGER)
-	@org.kie.api.definition.type.Label(value = "Issue")
-	private com.pv207.pv207_project.Issue issue;
-
-	@org.kie.api.definition.type.Label(value = "DEV_notes")
+	@org.kie.api.definition.type.Label("DEV_notes")
 	private java.lang.String dev_notes;
 
-	@org.kie.api.definition.type.Label(value = "Assignee")
+	@org.kie.api.definition.type.Label("Assignee")
 	private java.lang.String assignee;
+
+	@org.kie.api.definition.type.Label(value = "Issue reported")
+	private java.lang.String from_issue;
 
 	public Bug() {
 	}
@@ -57,14 +56,6 @@ public class Bug implements java.io.Serializable {
 		this.description = description;
 	}
 
-	public com.pv207.pv207_project.Issue getIssue() {
-		return this.issue;
-	}
-
-	public void setIssue(com.pv207.pv207_project.Issue issue) {
-		this.issue = issue;
-	}
-
 	public java.lang.String getDev_notes() {
 		return this.dev_notes;
 	}
@@ -81,15 +72,23 @@ public class Bug implements java.io.Serializable {
 		this.assignee = assignee;
 	}
 
+	public java.lang.String getFrom_issue() {
+		return this.from_issue;
+	}
+
+	public void setFrom_issue(java.lang.String from_issue) {
+		this.from_issue = from_issue;
+	}
+
 	public Bug(java.lang.Long id, java.lang.String name,
-			java.lang.String description, com.pv207.pv207_project.Issue issue,
-			java.lang.String dev_notes, java.lang.String assignee) {
+			java.lang.String description, java.lang.String dev_notes,
+			java.lang.String assignee, java.lang.String from_issue) {
 		this.id = id;
 		this.name = name;
 		this.description = description;
-		this.issue = issue;
 		this.dev_notes = dev_notes;
 		this.assignee = assignee;
+		this.from_issue = from_issue;
 	}
 
 }
