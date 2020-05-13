@@ -8,12 +8,15 @@ public class Issue implements java.io.Serializable {
 
 	static final long serialVersionUID = 1L;
 
-	@org.kie.api.definition.type.Label(value = "Name")
+	@org.kie.api.definition.type.Label("Name")
 	private java.lang.String name;
-	@org.kie.api.definition.type.Label(value = "Description")
+	@org.kie.api.definition.type.Label("Description")
 	private java.lang.String description;
-	@org.kie.api.definition.type.Label(value = "Date")
+	@org.kie.api.definition.type.Label("Date")
 	private java.util.Date date;
+
+	@org.kie.api.definition.type.Label(value = "Reporter_email")
+	private java.lang.String reporter_email;
 
 	public Issue() {
 	}
@@ -42,11 +45,20 @@ public class Issue implements java.io.Serializable {
 		this.date = date;
 	}
 
+	public java.lang.String getReporter_email() {
+		return this.reporter_email;
+	}
+
+	public void setReporter_email(java.lang.String reporter_email) {
+		this.reporter_email = reporter_email;
+	}
+
 	public Issue(java.lang.String name, java.lang.String description,
-			java.util.Date date) {
+			java.util.Date date, java.lang.String reporter_email) {
 		this.name = name;
 		this.description = description;
 		this.date = date;
+		this.reporter_email = reporter_email;
 	}
 
 }
