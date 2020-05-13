@@ -12,6 +12,7 @@ public class Bug implements java.io.Serializable {
 	@javax.persistence.GeneratedValue(strategy = javax.persistence.GenerationType.AUTO, generator = "BUG_ID_GENERATOR")
 	@javax.persistence.Id
 	@javax.persistence.SequenceGenerator(sequenceName = "BUG_ID_SEQ", name = "BUG_ID_GENERATOR")
+	@org.kie.api.definition.type.Label("ID")
 	private java.lang.Long id;
 
 	@org.kie.api.definition.type.Label("Name")
@@ -26,7 +27,7 @@ public class Bug implements java.io.Serializable {
 	@org.kie.api.definition.type.Label("Assignee")
 	private java.lang.String assignee;
 
-	@org.kie.api.definition.type.Label(value = "Issue reported")
+	@org.kie.api.definition.type.Label("Issue reported")
 	private java.lang.String from_issue;
 
 	public Bug() {
