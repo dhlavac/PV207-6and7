@@ -9,20 +9,13 @@ public class Feedback implements java.io.Serializable {
 
 	static final long serialVersionUID = 1L;
 
-	@org.kie.api.definition.type.Label("reviews")
-	private java.lang.String reviews;
 	@org.kie.api.definition.type.Label("stars")
 	private java.lang.Integer stars;
 
+	@org.kie.api.definition.type.Label(value = "review")
+	private java.lang.String review;
+
 	public Feedback() {
-	}
-
-	public java.lang.String getReviews() {
-		return this.reviews;
-	}
-
-	public void setReviews(java.lang.String reviews) {
-		this.reviews = reviews;
 	}
 
 	public java.lang.Integer getStars() {
@@ -33,9 +26,17 @@ public class Feedback implements java.io.Serializable {
 		this.stars = stars;
 	}
 
-	public Feedback(java.lang.String reviews, java.lang.Integer stars) {
-		this.reviews = reviews;
+	public java.lang.String getReview() {
+		return this.review;
+	}
+
+	public void setReview(java.lang.String review) {
+		this.review = review;
+	}
+
+	public Feedback(java.lang.Integer stars, java.lang.String review) {
 		this.stars = stars;
+		this.review = review;
 	}
 
 }
