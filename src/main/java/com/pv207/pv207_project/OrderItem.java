@@ -6,12 +6,47 @@ package com.pv207.pv207_project;
 
 public class OrderItem implements java.io.Serializable {
 
-    static final long serialVersionUID = 1L;
+	static final long serialVersionUID = 1L;
 
-    public OrderItem() {
-    }
+	@org.kie.api.definition.type.Label(value = "title")
+	private java.lang.String title;
+	@org.kie.api.definition.type.Label(value = "value")
+	private java.lang.Integer value;
+	@org.kie.api.definition.type.Label(value = "amount")
+	private java.lang.Integer amount;
 
+	public OrderItem() {
+	}
 
+	public java.lang.String getTitle() {
+		return this.title;
+	}
 
+	public void setTitle(java.lang.String title) {
+		this.title = title;
+	}
+
+	public java.lang.Integer getValue() {
+		return this.value;
+	}
+
+	public void setValue(java.lang.Integer value) {
+		this.value = value;
+	}
+
+	public java.lang.Integer getAmount() {
+		return this.amount;
+	}
+
+	public void setAmount(java.lang.Integer amount) {
+		this.amount = amount;
+	}
+
+	public OrderItem(java.lang.String title, java.lang.Integer value,
+			java.lang.Integer amount) {
+		this.title = title;
+		this.value = value;
+		this.amount = amount;
+	}
 
 }
